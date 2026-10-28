@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+}
+
+/* Custom Scrollbar for cute game look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F4EB;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5A9A3B;
+  border-radius: 8px;
+  border: 2px solid #F7F4EB;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #163824;
+}
+
+/* Ensure canvas looks crisp and smooth */
+canvas {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Custom animations */
+@keyframes floatBob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: floatBob 3s ease-in-out infinite;
+}
